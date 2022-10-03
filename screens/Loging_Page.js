@@ -21,10 +21,36 @@ export default function Loging_Page() {
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Password" /> 
         <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={() => console.log("hello world")}>Login</Button>
         
+
+        <HStack space={4} justifyContent="center">
+        <Link href="https://nativebase.io">
+        <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/githubIcon.png') }  >  
+        </Avatar>
+        </Link>
+
+        <Link href="https://apis.google.com/js/platform.js">
+        <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/GoogleIcon.png') }  >  
+        </Avatar>
+        </Link>
+
+
+        <Link href="https://nativebase.io">
+        <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/FacebookIcon.png') }  >  
+        </Avatar>
+        </Link>
+
+        <Link href="https://apis.google.com/js/platform.js">
+        <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/yIcon.png') }  >  
+        </Avatar>
+        </Link>
+        </HStack>
+
         <HStack space={3} justifyContent="center">
         <Text  bold>You Don't Have An Account ? </Text>
         <Link href="https://github.com/jeewanthamadu" isExternal _text={{color: "blue.600"}}>Register Please</Link>  
         </HStack>
+
+        
         
         </VStack>
 
