@@ -3,12 +3,14 @@ import React from 'react'
 
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Image}from 'native-base'
 
-export default function Loging_Page() {
+export default function Loging_Page({navigation}) {
   return (
     <NativeBaseProvider>
 
+                    
+
         <VStack space={4} alignItems="center" mt="5%">
-        <Text bold fontSize="8xl" color="indigo.600">Welcome </Text>
+        <Text bold fontSize="7xl" color="indigo.600">Welcome  !</Text>
         </VStack>
 
             <Center>
@@ -19,7 +21,7 @@ export default function Loging_Page() {
         <VStack space={4} alignItems="center" >
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="UserName" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Password" /> 
-        <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={() => console.log("hello world")}>Login</Button>
+        <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={()=>{navigation.navigate('Add_Vehicle')}}>Login</Button>
         
 
         <HStack space={4} justifyContent="center">
