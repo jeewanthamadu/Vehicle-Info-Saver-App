@@ -26,13 +26,14 @@ export default function Home({navigation}) {
                         <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.title}</Text>
                         <Text style={{marginBottom:10}} >{item.body}</Text>
                         <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('../images/githubIcon.png')} alt="car logo" />
+                       
                     </TouchableOpacity>
                 }
             />
       
     </View>
     </Center>
-   
+
     </NativeBaseProvider>
   )
 }
