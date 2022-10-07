@@ -1,5 +1,5 @@
-import { View } from 'react-native'
-import React from 'react'
+// import { View } from 'react-native'
+import * as React from 'react';
 
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Image}from 'native-base'
 
@@ -21,7 +21,8 @@ export default function Loging_Page({navigation}) {
         <VStack space={4} alignItems="center" >
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="UserName" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Password" /> 
-        <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={()=>{navigation.navigate('Add_Vehicle')}}>Login</Button>
+        <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={()=>{navigation.navigate('Home')}}>Login</Button>
+       
         
 
         <HStack space={4} justifyContent="center">

@@ -1,9 +1,8 @@
-import { View } from 'react-native'
-import React from 'react'
+// import { View } from 'react-native'
+import * as React from 'react';
+import {NativeBaseProvider ,Text,VStack,Input,Button,Flex,Link,Box,TextInput,Center,HStack,Image}from 'native-base'
 
-import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Box,Avatar,Center,HStack,Image}from 'native-base'
-
-export default function Add_Vehicle() {
+export default function Add_Vehicle({navigation}) {
   return (
     <NativeBaseProvider>
 
@@ -18,8 +17,21 @@ export default function Add_Vehicle() {
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Year" />
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Feul Type" />
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Price" />
+        <Input size="lg" w="75%"
+                            multiline={true}
+                            numberOfLines={5}
+                            placeholder="Description"
+                          
+                            // value={description}
+                            // onChangeText={(e)=>{
+                            //   setDescription(e)
+                            // }}
+                       />
+
+
+
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('VehicleInfo')}}>Create</Button>
         
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => console.log("hello world")}>Create</Button>
         </VStack>
 
 

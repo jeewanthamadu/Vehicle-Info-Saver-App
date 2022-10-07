@@ -1,16 +1,16 @@
-import { View } from 'react-native'
-import React from 'react'
+
+import * as React from 'react';
 
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Box,Avatar,Center,HStack,Image}from 'native-base'
 
-export default function Register_Page() {
+export default function Register_Page({navigation}) {
   return (
     <NativeBaseProvider>
 
        
 
 
-        <Box mt="10%" left="10" maxW="80" maxH="100%" rounded="lg" overflow="hidden" borderColor="coolGray.300" borderWidth="1" _dark={{
+     <Box mt="10%" left="10" maxW="80" maxH="100%" rounded="lg" overflow="hidden" borderColor="coolGray.300" borderWidth="1" _dark={{
         borderColor: "coolGray.700", backgroundColor: "gray.700" }}>
 
         <VStack space={4} alignItems="center" mt="5%">
@@ -24,7 +24,7 @@ export default function Register_Page() {
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="Age" />
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" /> 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => console.log("hello world")}>Create</Button>
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Add_Vehicle')}}>Create</Button>
         </VStack>
 
 
