@@ -24,7 +24,7 @@ export default function Register_Page({navigation}) {
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="Age" />
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" /> 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Add_Vehicle')}}>Create</Button>
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging_Page')}}>Create</Button>
         </VStack>
 
 

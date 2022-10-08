@@ -7,7 +7,7 @@ export default function Add_Vehicle({navigation}) {
     <NativeBaseProvider>
 
         <VStack space={4} alignItems="center" mt="5%">
-        <Text bold fontSize="5xl" color="indigo.600">Save Post </Text>
+        <Text bold fontSize="5xl" color="indigo.600">Add New Post </Text>
         
         </VStack>
 
@@ -30,7 +30,7 @@ export default function Add_Vehicle({navigation}) {
 
 
 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('VehicleInfo')}}>Create</Button>
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Home')}}>Create</Button>
         
         </VStack>
 

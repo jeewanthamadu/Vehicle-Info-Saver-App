@@ -50,10 +50,10 @@ export default function Loging_Page({navigation}) {
 
         <HStack space={3} justifyContent="center">
         <Text  bold>You Don't Have An Account ? </Text>
-        <Link href="https://github.com/jeewanthamadu" isExternal _text={{color: "blue.600"}}>Register Please</Link>  
+        <Link onPress={() => {navigation.navigate('Register_Page')}}>Register Please</Link>  
         </HStack>
 
-        
+        {/* isExternal _text={{color: "blue.600"} */}
         
         </VStack>
 
