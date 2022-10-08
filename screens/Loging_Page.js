@@ -9,7 +9,7 @@ export default function Loging_Page({navigation}) {
 
                     
 
-        <VStack space={4} alignItems="center" mt="5%">
+        <VStack space={2} alignItems="center" mt="1%">
         <Text bold fontSize="7xl" color="indigo.600">Welcome  !</Text>
         </VStack>
 
@@ -18,14 +18,14 @@ export default function Loging_Page({navigation}) {
             Thumbnail source= {require('../images/loginwallpaper.png')} alt="car logo" />
             </Center>
 
-        <VStack space={4} alignItems="center" >
+        <VStack space={3} alignItems="center" >
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="UserName" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Password" /> 
         <Button w="50%" mx="auto" fontSize="md" alignItems="center" h="13%" variant="solid" size="xsm" onPress={()=>{navigation.navigate('Home')}}>Login</Button>
        
         
 
-        <HStack space={4} justifyContent="center">
+        <HStack space={2} justifyContent="center">
         <Link href="https://nativebase.io">
         <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/githubIcon.png') }  >  
         </Avatar>
@@ -57,7 +57,7 @@ export default function Loging_Page({navigation}) {
         
         </VStack>
 
-        <VStack space={3} alignItems="center" mt="10%">
+        <VStack space={1} alignItems="center" mt="1%">
         <Text fontSize="xs"  bold>Designed By : Jeewantha Madushan </Text>
         </VStack>
 
