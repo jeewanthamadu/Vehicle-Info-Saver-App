@@ -11,12 +11,18 @@ export default function Add_Vehicle({navigation}) {
         
         </VStack>
 
-        <VStack space={7} alignItems="center" mt="10%">
+        <VStack space={5} alignItems="center" mt="5%">
+
+        <Box mt="5%" height="25%" width="40%" alignSelf="center" borderWidth="2" borderColor="indigo.600" borderRadius="20" _text={{
+      fontSize: "md",
+      fontWeight: "medium",
+      color: "warmGray.50",
+      letterSpacing: "lg"
+    }}></Box>
+
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Name" />
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Number" />
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Year" />
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Feul Type" />
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Price" />
         <Input size="lg" w="75%"
                             multiline={true}
                             numberOfLines={5}

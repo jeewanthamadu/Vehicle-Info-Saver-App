@@ -7,28 +7,23 @@ export default function Register_Page({navigation}) {
   return (
     <NativeBaseProvider>
 
-       
-
-
      <Box mt="10%" left="10" maxW="80" maxH="100%" rounded="lg" overflow="hidden" borderColor="coolGray.300" borderWidth="1" _dark={{
-        borderColor: "coolGray.700", backgroundColor: "gray.700" }}>
+        borderColor: "coolGray.700", backgroundColor: "gray.700" }}> 
 
-        <VStack space={4} alignItems="center" mt="5%">
+        <VStack space={6} alignItems="center" mt="10%">
         <Text bold fontSize="5xl" color="indigo.600">Create account </Text>
         </VStack>
 
-        <VStack space={7} alignItems="center" mt="10%">
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="Full Name" />
+        <VStack space={7} alignItems="center" mt="15%">
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="User Name" />
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="Contact Number" />
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="Age" />
+        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="E-mail" />
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" /> 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging_Page')}}>Create</Button>
+        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging_Page')}}>Create</Button>
         </VStack>
 
 
-        <VStack space={7} alignItems="center" mt="2%">
+        <VStack space={9} alignItems="center" mt="5%">
         <Text  bold>Or create account using social media </Text>
 
         <HStack space={3} justifyContent="center" >
