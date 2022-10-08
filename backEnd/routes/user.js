@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
 })
 
 
-
 router.post('/', async (req, res) => {
     const user = await new User({
         userName: req.body.userName,
