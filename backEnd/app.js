@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const car = require('./routes/car')
+// const car = require('./routes/car')
 const user = require('./routes/user')
 
 const app = express()
@@ -16,7 +16,7 @@ con.on('open', () => {
 })
 
 app.use(express.json());
-app.use('/car', post)
+// app.use('/car', car)
 app.use('/user', user)
 
 

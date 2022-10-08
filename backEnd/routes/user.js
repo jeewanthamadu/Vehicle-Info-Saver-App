@@ -3,8 +3,8 @@ const app = express()
 const router = express.Router()
 
 const User = require('../model/user.model')
-
 app.use(express.json())
+
 
 
 router.get('/', async (req, res) => {
@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
         res.send("Err : " + err)
     }
 })
+
 
 
 router.post('/', async (req, res) => {
@@ -34,8 +35,5 @@ router.post('/', async (req, res) => {
 
 
 
-
-
-
-
 module.exports = router
+
