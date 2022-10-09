@@ -1,8 +1,16 @@
 // import { View } from 'react-native'
-import * as React from 'react';
+
+import React, { useEffect, useState } from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Flex,Link,Box,TextInput,Center,HStack,Image}from 'native-base'
 
 export default function Add_Vehicle({navigation}) {
+
+    const [name,setName]=useState('');
+    const [VehicleNumber,setVehicleNumber]=useState('');
+    const [location,setLocation]=useState('');
+    const [description,setDescription]=useState('');
+    const [img,setImg]=useState('');
+
   return (
     <NativeBaseProvider>
 
@@ -22,12 +30,12 @@ export default function Add_Vehicle({navigation}) {
 
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Name" />
         <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Number" />
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Feul Type" />
+        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Location" />
         <Input size="lg" w="75%"
                             multiline={true}
                             numberOfLines={5}
                             placeholder="Description"
-                          
+
                             // value={description}
                             // onChangeText={(e)=>{
                             //   setDescription(e)
