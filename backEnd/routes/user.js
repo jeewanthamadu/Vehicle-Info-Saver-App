@@ -6,7 +6,6 @@ const User = require('../model/user.model')
 app.use(express.json())
 
 
-
 router.get('/', async (req, res) => {
     try {
         const user = await User.find();
@@ -30,9 +29,8 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.send('Err: ' + err)
     }
+
 })
-
-
 
 module.exports = router
 

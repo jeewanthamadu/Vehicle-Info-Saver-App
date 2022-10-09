@@ -10,7 +10,7 @@ const carSchema = new mongoose.Schema({
         type:Date,
         required: true
     },
-    FuelType:{
+    location:{
         type:String,
         required:true
     },

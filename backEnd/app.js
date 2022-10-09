@@ -20,7 +20,6 @@ app.use('/car', car)
 app.use('/user', user)
 
 
-
 app.listen(port, () => {
     console.log(`app starting on ${port}`);
 })

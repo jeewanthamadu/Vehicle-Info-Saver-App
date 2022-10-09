@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const cars = new Car({
-        regNo: req.body.regNo,
+        vehicleRegNumber: req.body.vehicleRegNumber,
         description: req.body.description,
-        fuelType:req.body.fuelType,
-        brandName: req.body.brandName
+        location:req.body.location,
+        vehicleBrandName: req.body.vehicleBrandName
     })
     try {
         const response = await cars.save();
@@ -27,16 +27,17 @@ router.post('/', async (req, res) => {
     }
 })
 
+
 router.put('/', async (req, res) => {
     try {
         const cars = await Car.find();
         for (const c of cars) {
-            if (req.body.regNo === c.regNo) {
+            if (req.body.vehicleRegNumber === c.vehicleRegNumber) {
                 const car = await Car.findById(c._id)
-                car.regNo = req.body.regNo;
+                car.vehicleRegNumber = req.body.vehicleRegNumber;
                 car.description = req.body.description;
-                car.fuelType = req.body.fuelType;
-                car.brandName = req.body.brandName;
+                car.location = req.body.location;
+                car.vehicleBrandName = req.body.vehicleBrandName;
                 const response = await car.save();
                 res.send(response)
             }
@@ -51,7 +52,7 @@ router.delete('/', async (req, res) => {
     try {
         const cars = await Car.find();
         for (const c of cars) {
-            if (req.body.regNo === c.regNo) {
+            if (req.body.vehicleRegNumber === c.vehicleRegNumber) {
                 const dlt = await Car.findById(c._id);
                 const response = await dlt.remove();
                 res.send(response)
