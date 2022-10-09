@@ -1,9 +1,53 @@
 
-import * as React from 'react';
-
+import React, { useEffect, useState } from 'react'
+import { Alert,StyleSheet,View } from 'react-native'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Box,Avatar,Center,HStack,Image}from 'native-base'
 
 export default function Register_Page({navigation}) {
+
+
+  const [userName,setuserName]=useState('');
+  const [email,setemail]=useState('');
+  const [nic,setnic]=useState('');
+  const [password,setpassword]=useState('');
+ 
+
+  const saveData=()=>{
+    console.log(userName , email , nic, password,"watune meka")
+    fetch('http://192.168.1.102:4000/users',{
+
+        method:'POST',    
+
+        body:JSON.stringify({
+          userName:userName,
+          email:email,
+          nic:nic,
+          password:password,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+        
+    })
+        .then((response) => {
+            Alert.alert("New User Saved Successfully !"),
+            console.log(userName , email , nic, password,"watune meka 1")
+            
+        })
+        .catch((err)=>{Alert.alert("Error occured !")
+        })
+}
+
+const clear=()=>{
+  setuserName('')
+  setemail('')
+  setnic('')
+  setpassword('')
+  
+}
+
+
+
   return (
     <NativeBaseProvider>
 
@@ -15,11 +59,30 @@ export default function Register_Page({navigation}) {
         </VStack>
 
         <VStack space={7} alignItems="center" mt="15%">
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="User Name" />
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="E-mail" />
-        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" />
-        <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" /> 
-        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging Page')}}>Create</Button>
+        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="User Name" 
+        value={userName}
+        onChangeText={(e)=>{
+          setuserName(e)
+        }} />
+        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="E-mail" 
+        value={email}
+        onChangeText={(e)=>{
+          setemail(e)
+        }} />
+        <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" 
+        value={nic}
+        onChangeText={(e)=>{
+          setnic(e)
+        }} />
+        <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" 
+        value={password}
+        onChangeText={(e)=>{
+          setpassword(e)
+        }} /> 
+        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={(e)=>{
+                                saveData()
+                                clear()
+                              }}>Create</Button>
         </VStack>
 
 

@@ -1,9 +1,8 @@
 const express = require('express')
-const app = express()
+
 const router = express.Router()
 
 const User = require('../model/user.model')
-app.use(express.json())
 
 
 router.get('/', async (req, res) => {
@@ -17,20 +16,54 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    const user = await new User({
+    const user = new User({
         userName: req.body.userName,
         email: req.body.email,
         nic: req.body.nic,
         password: req.body.password
     })
+    console.log(user)
     try {
         const response = await user.save();
         res.json(response)
+       
     } catch (err) {
         res.send('Err: ' + err)
     }
 
 })
+
+
+
+
+router.post('/search/',async(req,res)=>{
+    const email=req.body.email;
+    const password=req.body.password;
+    try {
+
+        const search= await User.find();
+        for (const u of search){
+            console.log(email,password,"awilla",u.email,u.password)
+            if(email===u.email && password===u.password){
+                console.log(email,password,"set")
+                res.send(true)
+                console.log(email,password,"set")
+            }else {
+                res.send(false)
+                console.log(email,password,"set nh")
+            }
+        }
+    }catch (err) {
+        console.log(email,password,"set nh nh")
+        res.send("error :"+err)
+    }
+})
+
+
+
+
+
+
 
 module.exports = router
 

@@ -8,7 +8,7 @@ export default function Home({navigation}) {
     const [posts,setPosts] =useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts?_limit=8')
+        fetch('http://192.168.1.102:4000/cars')
             .then((response) => response.json())
             .then((json) => setPosts(json));
     })
@@ -23,8 +23,8 @@ export default function Home({navigation}) {
                 data={posts}
                 renderItem={({ item }) =>
                     <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("Vehicle Information")}}>
-                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.title}</Text>
-                        <Text style={{marginBottom:10}} >{item.body}</Text>
+                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.vehicleBrandName}</Text>
+                        <Text style={{marginBottom:10}} >{item.description}</Text>
                         <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('../images/githubIcon.png')} alt="car logo" />
                        
                     </TouchableOpacity>

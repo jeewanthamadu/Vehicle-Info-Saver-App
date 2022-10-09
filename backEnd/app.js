@@ -17,7 +17,7 @@ con.on('open', () => {
 
 app.use(express.json());
 app.use('/cars', car)
-app.use('/user', user)
+app.use('/users', user)
 
 
 app.listen(port, () => {

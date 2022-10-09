@@ -5,6 +5,8 @@ import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Divider,Image ,Fab,Box
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function VehicleInfo({navigation}) {
+
+  
   return (
     <View style={styles.container}>
       <NativeBaseProvider>
