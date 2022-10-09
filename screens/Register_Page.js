@@ -11,7 +11,7 @@ export default function Register_Page({navigation}) {
         borderColor: "coolGray.700", backgroundColor: "gray.700" }}> 
 
         <VStack space={6} alignItems="center" mt="10%">
-        <Text bold fontSize="5xl" color="indigo.600">Create account </Text>
+        <Text bold fontSize="5xl" underline color="indigo.600">Create Account </Text>
         </VStack>
 
         <VStack space={7} alignItems="center" mt="15%">
@@ -19,7 +19,7 @@ export default function Register_Page({navigation}) {
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="E-mail" />
         <Input  size="lg" w="75%" mx="auto" variant="underlined" placeholder="NIC" />
         <Input type="password" size="lg" w="75%" mx="auto" variant="underlined" placeholder="Create Password" /> 
-        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging_Page')}}>Create</Button>
+        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Loging Page')}}>Create</Button>
         </VStack>
 
 

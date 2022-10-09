@@ -10,7 +10,7 @@ export default function Loging_Page({navigation}) {
                     
 
         <VStack space={2} alignItems="center" mt="1%">
-        <Text bold fontSize="7xl" color="indigo.600">Welcome  !</Text>
+        <Text bold fontSize="7xl" underline color="indigo.600">Welcome  !</Text>
         </VStack>
 
             <Center>
@@ -50,7 +50,7 @@ export default function Loging_Page({navigation}) {
 
         <HStack space={3} justifyContent="center">
         <Text  bold>You Don't Have An Account ? </Text>
-        <Link onPress={() => {navigation.navigate('Register_Page')}}>Register Please</Link>  
+        <Link onPress={() => {navigation.navigate('Register Page')}}>Register Please</Link>  
         </HStack>
 
         {/* isExternal _text={{color: "blue.600"} */}

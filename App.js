@@ -17,11 +17,11 @@ export default function App() {
       
       <Stack.Navigator>
 
-    <Stack.Screen name="Loging_Page" component={Loging_Page} />
-    <Stack.Screen name="Add_Vehicle" component={Add_Vehicle} />
+    <Stack.Screen name="Loging Page" component={Loging_Page} />
+    <Stack.Screen name="Add New Vehicle" component={Add_Vehicle} />
     <Stack.Screen name="Home" component={Home} />
-    <Stack.Screen name="Register_Page" component={Register_Page} />
-    <Stack.Screen name="VehicleInfo" component={VehicleInfo} />
+    <Stack.Screen name="Register Page" component={Register_Page} />
+    <Stack.Screen name="Vehicle Information" component={VehicleInfo} />
     
     </Stack.Navigator>
   

@@ -6,7 +6,7 @@ const user = require('./routes/user')
 const app = express()
 const port = 4000
 
-const url = 'mongodb://127.0.0.1/express'
+const url = 'mongodb://127.0.0.1/vehicleInfosaver'
 mongoose.connect(url,{useNewUrlParser: true});
 
 const con = mongoose.connection;
@@ -16,7 +16,7 @@ con.on('open', () => {
 })
 
 app.use(express.json());
-app.use('/car', car)
+app.use('/cars', car)
 app.use('/user', user)
 
 

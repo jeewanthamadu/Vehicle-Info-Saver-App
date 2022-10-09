@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
         location:req.body.location,
         vehicleBrandName: req.body.vehicleBrandName
     })
+    console.log(cars)
     try {
         const response = await cars.save();
         res.json(response)

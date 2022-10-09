@@ -7,7 +7,7 @@ const carSchema = new mongoose.Schema({
         required:true
     },
     vehicleRegNumber:{
-        type:Date,
+        type:String,
         required: true
     },
     location:{

@@ -1,56 +1,109 @@
-// import { View } from 'react-native'
-
+import { Alert,StyleSheet,View } from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import React, { useEffect, useState } from 'react'
-import {NativeBaseProvider ,Text,VStack,Input,Button,Flex,Link,Box,TextInput,Center,HStack,Image}from 'native-base'
+import {NativeBaseProvider ,Text,VStack,Input,Button,Flex,Link,Box,TextInput,Center,Fab,HStack,Image}from 'native-base'
 
 export default function Add_Vehicle({navigation}) {
 
     const [name,setName]=useState('');
-    const [VehicleNumber,setVehicleNumber]=useState('');
+    const [vehicleRegNumber,setvehicleRegNumber]=useState('');
     const [location,setLocation]=useState('');
     const [description,setDescription]=useState('');
     const [img,setImg]=useState('');
 
+    const saveData=()=>{
+        console.log(name , location , description,vehicleRegNumber,"watune meka")
+
+        fetch('http://192.168.1.102:4000/car',{
+            
+            method:'POST',
+            
+            body:JSON.stringify({
+                vehicleBrandName:name,
+                location:location,
+                description:description,
+                vehicleRegNumber:vehicleRegNumber,
+               
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+            
+        })
+       
+            .then((response) => {
+                Alert.alert("Vehicle Saved Successfully !")
+                
+            })
+            .catch((err)=>{Alert.alert("Error occured !")
+            })
+    }
+
+
   return (
+    <View style={styles.container}>
     <NativeBaseProvider>
 
         <VStack space={4} alignItems="center" mt="5%">
-        <Text bold fontSize="5xl" color="indigo.600">Add New Post </Text>
+        <Text bold fontSize="5xl" underline color="indigo.600">Add New Vehicle </Text>
         
         </VStack>
 
-        <VStack space={5} alignItems="center" mt="5%">
+        <VStack space={1} alignItems="center" mt="5%">
 
-        <Box mt="5%" height="25%" width="40%" alignSelf="center" borderWidth="2" borderColor="indigo.600" borderRadius="20" _text={{
+        <Box mt="2%" height="25%" width="60%" alignSelf="center" borderWidth="2" borderColor="black" borderRadius="20" _text={{
       fontSize: "md",
       fontWeight: "medium",
       color: "warmGray.50",
       letterSpacing: "lg"
-    }}></Box>
+    }}>
 
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Name" />
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Number" />
-        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Location" />
+<Fab onPress={""} renderInPortal={false} shadow={2} size="md" icon={<Ionicons color="white" name={"add-sharp"} size={20}/>} /> 
+
+    </Box>
+ 
+
+        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Name" 
+        value={name}
+                onChangeText={(e)=>{
+                  setName(e)
+                }} />
+        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Vehicle Number"
+         value={vehicleRegNumber}
+                onChangeText={(e)=>{
+                    setvehicleRegNumber(e)
+                }} />
+        <Input  size="lg" w="75%" mx="auto" variant="outline" placeholder="Location" 
+        value={location}
+        onChangeText={(e)=>{
+            setLocation(e)
+        }} />
         <Input size="lg" w="75%"
                             multiline={true}
-                            numberOfLines={5}
+                            numberOfLines={3}
                             placeholder="Description"
 
-                            // value={description}
-                            // onChangeText={(e)=>{
-                            //   setDescription(e)
-                            // }}
+                            value={description}
+                onChangeText={(e)=>{
+                    setDescription(e)
+                }}
                        />
 
 
 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={() => {navigation.navigate('Home')}}>Create</Button>
-        
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={saveData}>Create</Button>
+      
         </VStack>
 
 
 
     </NativeBaseProvider>
+    </View>
   )
 }
 
+const styles =StyleSheet.create({
+    container:{
+      flex: 20,
+    }
+  })
