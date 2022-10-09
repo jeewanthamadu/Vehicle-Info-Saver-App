@@ -14,7 +14,7 @@ export default function Add_Vehicle({navigation}) {
     const saveData=()=>{
         console.log(name , location , description,vehicleRegNumber,"watune meka")
 
-        fetch('http://192.168.1.102:4000/car',{
+        fetch('http://192.168.1.102:4000/cars',{
             
             method:'POST',
             
@@ -39,6 +39,14 @@ export default function Add_Vehicle({navigation}) {
             })
     }
 
+
+    const clear=()=>{
+        setName('')
+        setvehicleRegNumber('')
+        setLocation('')
+        setDescription('')
+        setImg('')
+    }
 
   return (
     <View style={styles.container}>
@@ -91,7 +99,10 @@ export default function Add_Vehicle({navigation}) {
 
 
 
-        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm" onPress={saveData}>Create</Button>
+        <Button w="50%" mx="auto" fontSize="lg" alignItems="center" h="8%" variant="solid" size="xsm"   onPress={(e)=>{
+                                saveData()
+                                clear()
+                              }}>Create</Button>
       
         </VStack>
 

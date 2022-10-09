@@ -6,6 +6,7 @@ import Loging_Page from './screens/Loging_Page'
 import Register_Page from './screens/Register_Page'
 import Home from './screens/Home'
 import VehicleInfo from './screens/VehicleInfo'
+import view from './screens/view'
 
 
 
@@ -16,6 +17,8 @@ export default function App() {
     <NavigationContainer>
       
       <Stack.Navigator>
+    <Stack.Screen name="view" component={view} options={{headerShown: false}} />
+
 
     <Stack.Screen name="Loging Page" component={Loging_Page} />
     <Stack.Screen name="Add New Vehicle" component={Add_Vehicle} />
