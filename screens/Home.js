@@ -26,13 +26,6 @@ export default function Home({navigation}) {
 
                 <TouchableCard data={item} nav={navigation}/>
 
-
-                    // <TouchableOpacity  style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("Vehicle Information")}}>
-                    //     <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.vehicleBrandName}</Text>
-                    //     <Text style={{marginBottom:10}} >{item.description}</Text>
-                    //     <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('../images/githubIcon.png')} alt="car logo" />
-                       
-                    // </TouchableOpacity>
                 }
             />
       

@@ -2,6 +2,8 @@ import { Alert,StyleSheet,View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import React, { useEffect, useState } from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Flex,Link,Box,TextInput,Center,Fab,HStack,Image}from 'native-base'
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
 
 export default function Add_Vehicle({navigation}) {
 
@@ -11,26 +13,25 @@ export default function Add_Vehicle({navigation}) {
     const [description,setDescription]=useState('');
     const [img,setImg]=useState('');
 
+
     const saveData=()=>{
-        console.log(name , location , description,vehicleRegNumber,"watune meka")
+        console.log(name , location , description,vehicleRegNumber,img)
 
         fetch('http://192.168.1.102:4000/cars',{
-            
-            method:'POST',
-            
+
+          method:'POST', 
+
             body:JSON.stringify({
                 vehicleBrandName:name,
                 location:location,
                 description:description,
                 vehicleRegNumber:vehicleRegNumber,
-               
+                img:img
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
-            
         })
-       
             .then((response) => {
                 Alert.alert("Vehicle Saved Successfully !")
                 
@@ -39,7 +40,6 @@ export default function Add_Vehicle({navigation}) {
             })
     }
 
-
     const clear=()=>{
         setName('')
         setvehicleRegNumber('')
@@ -47,6 +47,7 @@ export default function Add_Vehicle({navigation}) {
         setDescription('')
         setImg('')
     }
+
 
   return (
     <View style={styles.container}>
@@ -64,9 +65,11 @@ export default function Add_Vehicle({navigation}) {
       fontWeight: "medium",
       color: "warmGray.50",
       letterSpacing: "lg"
+      
     }}>
 
-<Fab onPress={""} renderInPortal={false} shadow={2} size="md" icon={<Ionicons color="white" name={"add-sharp"} size={20}/>} /> 
+
+<Fab renderInPortal={false} shadow={2} size="md" icon={<Ionicons color="white" name={"add-sharp"} size={20}/>} /> 
 
     </Box>
  
@@ -116,5 +119,9 @@ export default function Add_Vehicle({navigation}) {
 const styles =StyleSheet.create({
     container:{
       flex: 20,
+    },
+    img:{
+        width:'100%',
+        height:'100%'
     }
   })

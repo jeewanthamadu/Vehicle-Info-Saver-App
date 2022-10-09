@@ -2,7 +2,7 @@ import { View,StyleSheet, ImageBackground,TouchableOpacity} from 'react-native'
 import { NativeBaseProvider, Text, Input, VStack, Button } from 'native-base'
 import React from 'react'
 
-export default function flex({navigation}) {
+export default function view({navigation}) {
   return (
     <NativeBaseProvider>
      <ImageBackground source={require('../images/view1.jpg')} resizeMode="cover" style={style.image}  >
