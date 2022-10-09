@@ -2,6 +2,7 @@ import { View, Text,StyleSheet,FlatList,TouchableOpacity } from 'react-native'
 import {React,useEffect,useState}  from  'react'
 import { NativeBaseProvider, Center, Fab,Image } from "native-base";
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import TouchableCard from '../components/TouchableCard';
 
 export default function Home({navigation}) {
 
@@ -22,12 +23,16 @@ export default function Home({navigation}) {
        <FlatList
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("Vehicle Information")}}>
-                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.vehicleBrandName}</Text>
-                        <Text style={{marginBottom:10}} >{item.description}</Text>
-                        <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('../images/githubIcon.png')} alt="car logo" />
+
+                <TouchableCard data={item} nav={navigation}/>
+
+
+                    // <TouchableOpacity  style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("Vehicle Information")}}>
+                    //     <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.vehicleBrandName}</Text>
+                    //     <Text style={{marginBottom:10}} >{item.description}</Text>
+                    //     <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('../images/githubIcon.png')} alt="car logo" />
                        
-                    </TouchableOpacity>
+                    // </TouchableOpacity>
                 }
             />
       

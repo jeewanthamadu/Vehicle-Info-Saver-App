@@ -9,30 +9,24 @@ export default function TouchableCard({nav,data}) {
       style={style.card}
       activeOpacity={0.85}
       onPress={() => {
-            nav.navigate('Details',{obj:data,readOnlyProp:true});
+            nav.navigate('Vehicle Information',{obj:data,readOnlyProp:true});
       }}>
       <HStack style={{padding: 10}} space={2} alignItems="center">
         <View style={{width: '35%'}}>
           <Image
             style={style.logo}
-            source={require('../assets/img/electric_car.png')}
+            source={require('../images/GoogleIcon.png')}
           />
         </View>
-        {/* <VStack w="100" justifyContent="center">
-            <Heading>BMW</Heading>
-            <Text style={{marginBottom:10,fontWeight:'bold'}} >Kandy</Text>
-        </VStack> */}
+      
         <View style={{width: '62%'}}>
-          <Heading size="sm">{data.name}</Heading>
+          <Heading size="sm">{data.vehicleBrandName}</Heading>
           <Text style={{marginBottom: 10, fontWeight: 'bold'}}>
           <Ionicons name={"location-outline"} size={18} color={"red"} /> {data.location}
           </Text>
         </View>
       </HStack>
-      {/* <Heading>BMW</Heading>
-    <Text style={{marginBottom:10,fontWeight:'bold'}} >Kandy</Text>
-    <Text style={{marginBottom:10,fontWeight:'bold'}} >{item.title}</Text>
-    <Text style={{marginBottom:10}} >{item.body}</Text> */}
+     
     </TouchableOpacity>
   );
 }
@@ -41,11 +35,11 @@ const style = StyleSheet.create({
     container:{
         paddingTop: 20, 
         paddingHorizontal: 20,
-        // width:'80%'
+       
     },
 
     card:{
-        // borderWidth:1,
+       
         marginBottom:'5%',
         padding:5,
         backgroundColor:"white",
@@ -66,6 +60,6 @@ const style = StyleSheet.create({
         width: 100,
         height: 100,
         resizeMode:"contain",
-        // backgroundColor:"pink"
+      
       },
 })
