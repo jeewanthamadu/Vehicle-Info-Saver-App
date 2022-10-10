@@ -23,11 +23,11 @@ export default function VehicleInfo({navigation}) {
       letterSpacing: "lg"
     }}></Box>
     
-        <Text top="10px" left="-107"  bold fontSize="sm" color="indigo.400">Vehicle Brand Name</Text>
+        <Text top="10px" left="-107"  bold fontSize="sm" color="black">Vehicle Brand Name</Text>
         <Input  bottom="2" w="80%" variant="underlined" placeholder="Vehicle Brand Name" />
-        <Text top="0px" left="-107" bold fontSize="sm" color="indigo.400">Registation Number</Text>
+        <Text top="0px" left="-107" bold fontSize="sm" color="black">Registation Number</Text>
         <Input  bottom="5" w="80%" variant="underlined" placeholder="Enter Registation Number" />
-        <Text top="-23px" left="-117" bold fontSize="sm" color="indigo.400">Other Infomation</Text>
+        <Text top="-23px" left="-117" bold fontSize="sm" color="black">Other Infomation</Text>
         <Input bottom="79" w="80%" h="20%" variant="underlined" placeholder="Enter Other Infomation" />
         
 

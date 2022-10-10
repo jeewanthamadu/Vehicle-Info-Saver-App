@@ -11,7 +11,6 @@ export default function view({navigation}) {
                   <Text style={{fontWeight:'bold',color:'white', fontSize: 30,  lineHeight: 84,}}> GET  START </Text>
          </TouchableOpacity>
       </ImageBackground>  
-     
       </NativeBaseProvider>
   )
 }

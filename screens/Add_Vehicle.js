@@ -17,7 +17,7 @@ export default function Add_Vehicle({navigation}) {
     const saveData=()=>{
         console.log(name , location , description,vehicleRegNumber,img)
 
-        fetch('http://192.168.1.102:4000/cars',{
+        fetch('http://192.168.1.100:4000/cars',{
 
           method:'POST', 
 

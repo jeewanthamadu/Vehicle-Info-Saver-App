@@ -45,16 +45,13 @@ router.post('/search/',async(req,res)=>{
         for (const u of search){
             console.log(email,password,"awilla",u.email,u.password)
             if(email===u.email && password===u.password){
-                console.log(email,password,"set")
+           
                 res.send(true)
-                console.log(email,password,"set")
             }else {
                 res.send(false)
-                console.log(email,password,"set nh")
             }
         }
-    }catch (err) {
-        console.log(email,password,"set nh nh")
+    }catch (err) { 
         res.send("error :"+err)
     }
 })

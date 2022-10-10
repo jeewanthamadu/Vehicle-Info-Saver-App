@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import { Alert,StyleSheet,View } from 'react-native'
+import { Alert,StyleSheet,View,ScrollView  } from 'react-native'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Box,Avatar,Center,HStack,Image}from 'native-base'
 
 export default function Register_Page({navigation}) {
@@ -13,8 +13,8 @@ export default function Register_Page({navigation}) {
  
 
   const saveData=()=>{
-    console.log(userName , email , nic, password,"watune meka")
-    fetch('http://192.168.1.102:4000/users',{
+    console.log(userName , email , nic, password)
+    fetch('http://192.168.1.100:4000/users',{
 
         method:'POST',    
 
@@ -30,8 +30,7 @@ export default function Register_Page({navigation}) {
         
     })
         .then((response) => {
-            Alert.alert("New User Saved Successfully !"),
-            console.log(userName , email , nic, password,"watune meka 1")
+            Alert.alert("New User Saved Successfully !")
             
         })
         .catch((err)=>{Alert.alert("Error occured !")
@@ -49,7 +48,10 @@ const clear=()=>{
 
 
   return (
+    
     <NativeBaseProvider>
+
+
 
      <Box mt="10%" left="10" maxW="80" maxH="100%" rounded="lg" overflow="hidden" borderColor="coolGray.300" borderWidth="1" _dark={{
         borderColor: "coolGray.700", backgroundColor: "gray.700" }}> 
@@ -79,17 +81,17 @@ const clear=()=>{
         onChangeText={(e)=>{
           setpassword(e)
         }} /> 
-        <Button w="50%" mt="7%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={(e)=>{
+        <Button w="50%" mt="2%" mx="auto" fontSize="lg" alignItems="center" h="10%" variant="solid" size="xsm" onPress={(e)=>{
                                 saveData()
                                 clear()
                               }}>Create</Button>
         </VStack>
 
 
-        <VStack space={9} alignItems="center" mt="5%">
+        <VStack space={9} alignItems="center" mt="-1%">
         <Text  bold>Or create account using social media </Text>
 
-        <HStack space={3} justifyContent="center" >
+        <HStack space={1} justifyContent="center" >
 
         <Link href="https://nativebase.io">
         <Avatar bg="white" size="sm"  Thumbnail source= {require('../images/githubIcon.png') }  >  
@@ -121,8 +123,9 @@ const clear=()=>{
         </Box>
 
         
-
+ 
     </NativeBaseProvider>
+    
   )
 }
 

@@ -1,4 +1,4 @@
-import { Alert} from 'react-native'
+import { Alert,ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Image}from 'native-base'
@@ -11,7 +11,7 @@ export default function Loging_Page({navigation}) {
   const LoginOnAction=()=>{
     console.log(email , password )
 
-  fetch('http://192.168.1.102:4000/users/search',{
+  fetch('http://192.168.1.100:4000/users/search',{
             method:'POST',
             body:JSON.stringify({
                 email:email,
@@ -40,11 +40,14 @@ export default function Loging_Page({navigation}) {
 
 
   return (
+
+
+
     <NativeBaseProvider>
 
-                    
+<ScrollView>     
 
-        <VStack space={2} alignItems="center" mt="1%">
+        <VStack space={1} alignItems="center" mt="0%">
         <Text bold fontSize="7xl" underline color="indigo.600">Welcome  !</Text>
         </VStack>
 
@@ -110,6 +113,7 @@ export default function Loging_Page({navigation}) {
         <Text left="115px" fontSize="xs"  bold>Designed By : Jeewantha Madushan </Text>
          */}
         
+        </ScrollView>
     </NativeBaseProvider>
   )
 }
